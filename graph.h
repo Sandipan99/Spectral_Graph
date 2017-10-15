@@ -7,5 +7,5 @@
 arma::mat build_adj_matrix(std::string);
 void display(arma::mat);
 arma::mat laplacian(arma::mat);
-
+void diagonalize(arma::mat,arma::mat &,arma::mat &);
 #endif

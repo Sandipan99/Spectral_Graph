@@ -35,4 +35,14 @@ arma::mat laplacian(arma::mat m){
 		D(i,i) = dia(i);
 	L_G = D - m;
 	return L_G;
+}
+
+void diagonalize(arma::mat A, arma::mat & T, arma::mat & lambda){
+	int dim = A.n_cols;
+	lambda = fill_zero(dim,dim);
+	arma::vec eigval;
+	eig_sym(eigval,T,A);
+	for(int i=0;i<dim;i++)
+		lambda(i,i) = eigval(i);	
 }	
+
